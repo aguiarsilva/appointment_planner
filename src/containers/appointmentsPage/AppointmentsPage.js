@@ -2,15 +2,11 @@ import React, { useState } from "react";
 import { TileList } from '../../components/tileList/TileList';
 import { AppointmentForm } from "../../components/appointmentForm/AppointmentForm";
 
-export const AppointmentsPage = (props) => {
+export const AppointmentsPage = ({ appointments, addAppointment, contacts }) => {
   /*
   Define state variables for 
   appointment info
   */
-  const appointments = props.appointments;
-  const contacts = props.contacts;
-  const addAppointment = props.addAppointment;
-
   const [contact, setContacts] = useState('');
   const [title, setTitle] = useState('');
   const [date, setDate] = useState('');
@@ -29,7 +25,7 @@ export const AppointmentsPage = (props) => {
   };
 
   return (
-    <div>
+    <>
       <section>
         <h2>Add Appointment</h2>
         <AppointmentForm title={title}
@@ -48,6 +44,6 @@ export const AppointmentsPage = (props) => {
         <h2>Appointments</h2>
         <TileList arr={appointments}/>
       </section>
-    </div>
+    </>
   );
 };
