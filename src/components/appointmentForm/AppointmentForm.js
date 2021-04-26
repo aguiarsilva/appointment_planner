@@ -22,14 +22,14 @@ export const AppointmentForm = ({
 
   return (
     <form onSumbit={handleSubmit}>
-      <input type="text" value={title} onChange={({ target }) => setTitle(target.value)} />
-      <input type="date" value={date} min={getTodayString} onChange={({ target }) => setDate(target.value)} />
-      <input type="time" value={time} onChange={({ target }) => setTime(target.value)} />
+      <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
+      <input type="date" value={date} min={getTodayString} onChange={(e) => setDate(e.target.value)} />
+      <input type="time" value={time} onChange={(e) => setTime(e.target.value)} />
       <ContactPicker
       contacts={contacts}
       value={contact}
-      onChange={({ target }) => setContact(target.value)} />
-      <input type="submit" />
+      onChange={(e) => setContact(e.target.value)} />
+      <input type="submit" value="Add Appointment" />
     </form>
   );
 };
